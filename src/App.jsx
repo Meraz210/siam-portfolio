@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 
 const navItems = [
@@ -5,6 +6,7 @@ const navItems = [
   ['About', 'about'],
   ['Education', 'education'],
   ['Skills', 'skills'],
+  ['Portfolio', 'portfolio'],
   ['Certifications', 'certifications'],
   ['Research', 'research'],
   ['Experience', 'experience'],
@@ -113,6 +115,27 @@ const certifications = [
   },
 ]
 
+const portfolioFocus = [
+  {
+    label: 'Lean Improvement',
+    title: 'Production Flow & Waste Reduction',
+    detail:
+      'Applies lean thinking, 5S, and process observation to identify waste, improve workplace organization, and support measurable production improvement.',
+  },
+  {
+    label: 'Quality Systems',
+    title: 'Process Control & Documentation',
+    detail:
+      'Uses quality assurance, statistical process control, and technical documentation to support consistent output and reliable decision-making.',
+  },
+  {
+    label: 'Smart Manufacturing',
+    title: 'Data-Driven Industrial Decisions',
+    detail:
+      'Connects production systems with research interests in digital twins, predictive maintenance, explainable AI, and industrial automation.',
+  },
+]
+
 const research = [
   {
     status: 'Published Research Paper',
@@ -162,11 +185,15 @@ function SectionHeader({ label, title, children }) {
 }
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const closeMenu = () => setIsMenuOpen(false)
+
   return (
     <div className="site-shell">
       <header className="site-header">
         <nav className="navbar" aria-label="Primary navigation">
-          <a className="brand" href="#hero" aria-label="Mahbub Hassan Siam home">
+          <a className="brand" href="#hero" aria-label="Mahbub Hassan Siam home" onClick={closeMenu}>
             <span className="brand-mark">MS</span>
             <span className="brand-copy">
               <strong>Mahbub Hassan Siam</strong>
@@ -174,9 +201,21 @@ function App() {
             </span>
           </a>
 
-          <div className="nav-links">
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div className={`nav-links ${isMenuOpen ? 'is-open' : ''}`}>
             {navItems.map(([label, id]) => (
-              <a href={`#${id}`} key={id}>
+              <a href={`#${id}`} key={id} onClick={closeMenu}>
                 {label}
               </a>
             ))}
@@ -314,6 +353,26 @@ function App() {
                       </span>
                     ))}
                   </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section portfolio-section section-anchor" id="portfolio">
+          <div className="container">
+            <SectionHeader label="Engineering Portfolio" title="Where my engineering focus creates value">
+              A recruiter-focused snapshot of how my industrial engineering
+              background connects production improvement, quality discipline,
+              and modern manufacturing systems.
+            </SectionHeader>
+
+            <div className="portfolio-grid">
+              {portfolioFocus.map((item) => (
+                <article className="portfolio-card" key={item.title}>
+                  <span>{item.label}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
                 </article>
               ))}
             </div>
