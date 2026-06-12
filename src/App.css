@@ -1,11 +1,13 @@
 :root {
-  --navy: #0b1f3a;
+  --navy: #081a2f;
   --navy-2: #12355b;
-  --royal: #2563eb;
-  --teal: #14b8a6;
-  --slate: #334155;
+  --royal: #1d4ed8;
+  --teal: #0f766e;
+  --amber: #d97706;
+  --slate: #2f3b4c;
   --muted: #64748b;
   --bg: #f8fafc;
+  --ice: #eef5ff;
   --card: #ffffff;
   --border: #e2e8f0;
   --border-strong: #cbd5e1;
@@ -20,8 +22,8 @@ html {
 
 body {
   background:
-    linear-gradient(90deg, rgba(29, 78, 216, 0.035) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(29, 78, 216, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 78, 216, 0.032) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(15, 118, 110, 0.026) 1px, transparent 1px),
     var(--bg);
   background-size: 44px 44px;
   color: var(--slate);
@@ -76,7 +78,7 @@ a {
 
 .brand-mark {
   align-items: center;
-  background: linear-gradient(135deg, var(--navy), var(--royal));
+  background: linear-gradient(135deg, var(--navy), var(--royal) 72%, var(--teal));
   border-radius: var(--radius);
   color: #fff;
   display: inline-flex;
@@ -176,8 +178,9 @@ a {
 
 .hero-section {
   background:
-    radial-gradient(circle at 88% 16%, rgba(29, 78, 216, 0.16), transparent 28%),
-    linear-gradient(135deg, #fff 0%, #f8fafc 42%, #eef5ff 100%);
+    radial-gradient(circle at 88% 16%, rgba(29, 78, 216, 0.14), transparent 28%),
+    radial-gradient(circle at 14% 82%, rgba(15, 118, 110, 0.08), transparent 26%),
+    linear-gradient(135deg, #ffffff 0%, #f8fafc 45%, var(--ice) 100%);
   padding: clamp(64px, 8vw, 112px) 0;
   position: relative;
 }
@@ -220,7 +223,7 @@ a {
 }
 
 .hero-badge {
-  background: #eef5ff;
+  background: var(--ice);
   border: 1px solid #dbeafe;
   border-radius: 999px;
   padding: 8px 12px;
@@ -275,7 +278,7 @@ a {
 .hero-tags span,
 .chip,
 .research-tags small {
-  background: #eff6ff;
+  background: var(--ice);
   border: 1px solid #dbeafe;
   border-radius: 999px;
   color: var(--navy-2);
@@ -543,7 +546,7 @@ a {
 }
 
 .education-card > strong {
-  background: #eef5ff;
+  background: var(--ice);
   border: 1px solid #dbeafe;
   border-radius: 999px;
   color: var(--royal);
@@ -564,7 +567,7 @@ a {
 .portfolio-card h3::before,
 .research-card h3::before,
 .experience-card h3::before {
-  background: linear-gradient(135deg, var(--royal), var(--teal));
+  background: linear-gradient(135deg, var(--royal), var(--amber));
   border-radius: 999px;
   content: "";
   display: inline-block;
@@ -595,7 +598,7 @@ a {
 }
 
 .portfolio-card::after {
-  background: linear-gradient(135deg, rgba(29, 78, 216, 0.1), rgba(20, 184, 166, 0.12));
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.09), rgba(15, 118, 110, 0.1));
   border-radius: 999px;
   content: "";
   height: 118px;
@@ -655,7 +658,7 @@ a {
 }
 
 .research-card::before {
-  background: linear-gradient(90deg, var(--royal), var(--teal));
+  background: linear-gradient(90deg, var(--royal), var(--teal), var(--amber));
   content: "";
   height: 4px;
   left: 0;
@@ -676,7 +679,7 @@ a {
 .research-tags small {
   background: #f0fdfa;
   border-color: #ccfbf1;
-  color: #0f766e;
+  color: var(--teal);
 }
 
 .experience-card {
@@ -701,7 +704,7 @@ a {
 
 .contact-section {
   background:
-    radial-gradient(circle at 86% 16%, rgba(20, 184, 166, 0.22), transparent 27%),
+    radial-gradient(circle at 86% 16%, rgba(15, 118, 110, 0.24), transparent 27%),
     radial-gradient(circle at 16% 90%, rgba(29, 78, 216, 0.22), transparent 30%),
     linear-gradient(135deg, var(--navy), #071629 72%);
   color: #fff;
