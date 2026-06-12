@@ -395,12 +395,33 @@ function App() {
                 For hiring conversations, research discussions, or professional
                 opportunities, reach out directly by email or phone.
               </p>
+              <div className="contact-tags" aria-label="Open to role categories">
+                <span>Production Engineering</span>
+                <span>Quality Assurance</span>
+                <span>Process Improvement</span>
+              </div>
             </div>
 
             <address className="contact-card" aria-label="Contact information">
-              <a href="mailto:cnsiam787@gmail.com">cnsiam787@gmail.com</a>
-              <a href="tel:+8801304681741">+88 01304681741</a>
-              <span>Mirpur-10, Dhaka</span>
+              <div className="contact-card-header">
+                <span>Let's Connect</span>
+                <strong>Response-ready contact</strong>
+              </div>
+              <a className="contact-item" href="mailto:cnsiam787@gmail.com">
+                <span>Email</span>
+                <strong>cnsiam787@gmail.com</strong>
+              </a>
+              <a className="contact-item" href="tel:+8801304681741">
+                <span>Phone</span>
+                <strong>+88 01304681741</strong>
+              </a>
+              <div className="contact-item">
+                <span>Location</span>
+                <strong>Mirpur-10, Dhaka</strong>
+              </div>
+              <a className="contact-cta" href="mailto:cnsiam787@gmail.com">
+                Send Email
+              </a>
             </address>
           </div>
         </section>
